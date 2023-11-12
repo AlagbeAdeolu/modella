@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="flex items-center justify-center h-[50dvh]">
+    <div className="flex items-center justify-center h-screen">
       <div className="flex flex-col justify-center items-center gap-6">
         <h2 className="text-center text-white w-[500px] text-6xl">
           Let's find a face for your brand.
