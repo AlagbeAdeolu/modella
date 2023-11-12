@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@300&family=Dancing+Script&family=Lora&family=Merriweather&family=Mooli&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belleza&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #000;
+    color: #C38F79;
+}
