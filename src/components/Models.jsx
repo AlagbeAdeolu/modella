@@ -1,78 +1,60 @@
 import React from "react";
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 const Models = () => {
   const models = [
-    { src: "/assets/model.jpg" },
-    { src: "/assets/model2.jpg" },
-    { src: "/assets/model3.jpg" },
-    { src: "/assets/model8.jpg" },
-    { src: "/assets/model4.jpg" },
-    { src: "/assets/model6.jpg" },
-    { src: "/assets/model5.jpg" },
-    { src: "/assets/model7.jpg" },
+    { src: "/assets/model.jpg", name: "Tomi Lanre" },
+    { src: "/assets/model2.jpg", name: "Ruth Arthur" },
+    { src: "/assets/model6.jpg", name: "Tobi Amusan" },
+    { src: "/assets/model8.jpg", name: "Eliza Smith" },
+    { src: "/assets/model3.jpg", name: "Aminat Sheikh" },
+    { src: "/assets/model7.jpg", name: "Kehinde Adams" },
+    { src: "/assets/model5.jpg", name: "Xi Pei" },
+    { src: "/assets/model4.jpg", name: "Bella Alvarez" },
   ];
+
+  const ModelColumn = ({ images, rev }) => (
+    <div className={`flex h-[600px] w-1/4 gap-6 ${rev ? "flex-col-reverse" : "flex-col"}`}>
+      {images.map((model, index) => (
+        <div key={index} className="group relative overflow-hidden">
+            <img
+              
+              src={model.src}
+              alt={`model-${index}`}
+              className={`object-cover ${index === 0 ? "h-[250px]" : "flex-1"} w-full bg-gray-700 transform transition-transform duration-1000 group-hover:scale-110 `}
+            />
+            <div className="absolute bg-gray-800 inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 group-hover:bg-opacity-70 transition-opacity duration-300">
+            <p className="text-[#d19176] font-bold text-lg">{model.name}</p>
+          </div>
+
+        </div>
+      ))}
+    </div>
+  );
+
   return (
-    <div className="my-6 flex gap-10 flex-col items-center justify-center">
+    <div className="my-6 flex flex-col items-center justify-center">
       <div className="border border-[#C38F79] flex w-full h-20 gap-2 items-center">
         <div className="w-20 h-20 border-t border-[#C38F79] items-center flex justify-center rotate-90">
           <ArrowRightAltIcon fontSize="large" />
         </div>
         <h2 className="ml-6 text-white text-4xl">
-          You bring the brand, we bring the <span className="text-[#BE8A74]">models</span>
+          You bring the brand, we bring the{" "}
+          <span className="text-[#BE8A74]">models</span>
         </h2>
       </div>
       <div className="w-full flex mb-8 gap-6">
-        <div className="flex w-1/4 gap-6 flex-col">
-          <img
-            src={models[0].src}
-            alt="models"
-            className="object-cover h-[250px] w-\full] bg-gray-700"
-          />
-          <img
-            src={models[1].src}
-            alt="models"
-            className="object-cover  w-full flex-1 bg-gray-700"
-          />
-        </div>
-        <div className="flex w-1/4 gap-6 flex-col-reverse">
-          <img
-            src={models[2].src}
-            alt="models"
-            className="object-cover h-[250px] w-full bg-gray-700"
-          />
-          <img
-            src={models[3].src}
-            alt="models"
-            className="object-cover w-full flex-1 bg-gray-700"
-          />
-        </div>
-        <div className="flex w-1/4 gap-6 flex-col">
-          <img
-            src={models[4].src}
-            alt="models"
-            className="object-cover h-[250px] w-full bg-gray-700"
-          />
-          <img
-            src={models[5].src}
-            alt="models"
-            className="object-cover w-full flex-1 bg-gray-700"
-          />
-        </div>
-        <div className="flex w-1/4 gap-6 flex-col-reverse">
-          <img
-            src={models[6].src}
-            alt="models"
-            className="object-cover h-[250px] w-full bg-gray-700"
-          />
-          <img
-            src={models[7].src}
-            alt="models"
-            className="object-cover w-full flex-1 bg-gray-700"
-          />
-        </div>
+        <ModelColumn images={[models[0], models[1]]} />
+        <ModelColumn rev images={[models[2], models[3]]} />
+        <ModelColumn images={[models[4], models[5]]} />
+        <ModelColumn rev images={[models[6], models[7]]} />
       </div>
     </div>
   );
 };
+
+
+
+
+
 export default Models;
