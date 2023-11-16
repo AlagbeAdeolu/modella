@@ -46,7 +46,7 @@ const Magazines = () => {
           {covers.map((cover, idx) => (
             <div
               key={idx}
-              className={`flex items-center justify-between gap-10 transition-opacity transition-transform transform ${
+              className={`flex items-center justify-between gap-10 transition-opacity transform ${
                 currentSlide === idx ? "opacity-100 scale-100" : "opacity-0 scale-90 hidden"
               }`}
             >
